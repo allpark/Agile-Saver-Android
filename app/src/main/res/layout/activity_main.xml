@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.agilesavev2.views.main.MainPresenter" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background"
+        android:gravity="center"
+        tools:context=".MainActivity">
+
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/logo2" />
+
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="278dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#140070"
+            android:onClick="@{presenter::handleLoginAction}"
+            android:text="LOG IN"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="278dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#140070"
+            android:onClick="@{presenter::handleRegisterAction}"
+            android:text="REGISTER"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+
+
+
+
+    </LinearLayout>
+</layout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--OLD-->
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools">-->
+<!--<data>-->
+<!--    <variable-->
+<!--        name="presenter"-->
+<!--        type="com.example.agilesavev2.views.main.MainPresenter" />-->
+<!--</data>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".main.MainActivity">-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="249dp"-->
+<!--        android:layout_height="49dp"-->
+<!--        android:layout_marginTop="264dp"-->
+<!--        android:text="LOGIN"-->
+<!--        android:onClick="@{presenter::handleLoginAction}"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="249dp"-->
+<!--        android:layout_height="49dp"-->
+<!--        android:layout_marginTop="48dp"-->
+<!--        android:text="REGISTER"-->
+<!--        android:onClick="@{presenter::handleRegisterAction}"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/button"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/button"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button" />-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</layout>-->

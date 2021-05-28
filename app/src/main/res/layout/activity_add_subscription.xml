@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.agilesavev2.views.subscriptions.add_subscription.AddSubscriptionPresenter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.subscriptions.add_subscription.AddSubscriptionActivity"
+        android:background="@drawable/gradient_background2">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/linearLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="SET CATEGORY"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="41dp"
+                        android:layout_height="29dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:tint="@color/white"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/gobackbutton"
+                        android:onClick="@{presenter::handleBack}"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:id="@+id/fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@color/agileSaverGray"
+                        android:orientation="vertical"/>
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:id="@+id/piechart_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Total:"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"/>
+
+                            <TextView
+                                android:id="@+id/subscriptions_total_value"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textSize="25dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="per month"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+
+
+                    </FrameLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="20dp"
+                        android:backgroundTint="#4AFFFFFF"
+                        app:cardCornerRadius="20dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_margin="40dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Monthly subscriptionsn can quickly pile up without us noticing."
+                                android:textColor="@color/white"
+                                android:textSize="16dp"
+                                />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:text="Keep track of your monthly payments by adding your new subscriptions below."
+                                android:textColor="@color/white"
+                                android:textSize="16dp"
+                                />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="bottom">
+                                <EditText
+                                    android:id="@+id/name"
+                                    android:maxLength="20"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="10dp"
+                                    android:background="@drawable/textbox_background"
+                                    android:hint="Name"
+                                    android:textColorHint="@color/hintColour"
+                                    android:textAlignment="center"/>
+                                <EditText
+                                    android:id="@+id/monthly_price"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="10dp"
+                                    android:background="@drawable/textbox_background"
+                                    android:hint="Price/m"
+                                    android:inputType="numberDecimal"
+                                    android:textColorHint="@color/hintColour"
+                                    android:textAlignment="center"/>
+                                <Spinner
+                                    android:id="@+id/subscription_category"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="27dp"
+                                    android:layout_marginVertical="10dp"
+                                    android:background="@drawable/textbox_background"
+                                    android:hint="Category"
+                                    android:entries="@array/subscriptions_category"
+                                    android:textAlignment="center"/>
+
+                                <android.widget.Button
+                                    android:layout_width="111dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/button_background_filled"
+                                    android:textColor="@color/white"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="20dp"
+                                    android:text="Save"
+                                    android:onClick="@{presenter::handleOnSubmit}"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

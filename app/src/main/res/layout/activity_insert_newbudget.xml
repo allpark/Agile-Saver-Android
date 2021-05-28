@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.agilesavev2.views.my_budget.addBudget.InsertNewBudgetPresenter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.settings.add_category.AddCategoryActivity"
+        android:background="@drawable/gradient_background2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="ADD BUDGET"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="41dp"
+                    android:layout_height="29dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:tint="@color/white"
+                    android:onClick="@{presenter::handleBack}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/gobackbutton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@color/agileSaverGray"
+                    android:orientation="vertical"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="#4AFFFFFF"
+                    app:cardCornerRadius="20dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_margin="40dp">
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="match_parent"
+                            android:layout_height="74dp"
+                            android:layout_marginTop="24dp"
+                            android:text="You can also use this space to type how much you think you spend each month."
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:textColor="@color/white"
+                            android:text="You might end up suprised!"
+                            android:textSize="20dp"
+                            app:layout_constraintEnd_toEndOf="@+id/textView19"
+                            app:layout_constraintStart_toStartOf="@+id/textView19"
+                            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                        <EditText
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="64dp"
+                            android:background="@drawable/textbox_background"
+                            android:ellipsize="start"
+                            android:hint="Name"
+                            android:paddingLeft="5dp"
+                            android:textColorHint="#132d94"
+                            android:textStyle="bold" />
+
+
+                        <android.widget.Button
+                            android:id="@+id/categorySelector"
+                            android:layout_width="match_parent"
+                            android:layout_height="26dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/textbox_background"
+                            android:text="category"
+                            android:gravity="left"
+                            android:paddingLeft="5dp"
+                            android:onClick="@{presenter::handleShowCategory}"
+                            android:textColor="@color/agileSaverPurpleBlue"
+                            android:textStyle="bold"/>
+
+
+
+                        <EditText
+                            android:id="@+id/target"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textbox_background"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:ellipsize="start"
+                            android:hint="Target"
+                            android:textColorHint="#132d94"
+                            android:textStyle="bold"
+                            android:inputType="numberDecimal"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+                            <android.widget.Button
+                                android:layout_width="111dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/button_background_filled"
+                                android:textColor="@color/white"
+                                android:layout_margin="20dp"
+                                android:onClick="@{presenter::handleAddBudget}"
+                                android:text="Save" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        tools:context=".views.my_budget.addBudget.AddBudgetActivity">-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            android:backgroundTint="@color/agileSaverPurple2"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            >-->
+
+    <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                android:layout_width="342dp"-->
+    <!--                android:layout_height="558dp">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView19"-->
+    <!--                    android:layout_width="266dp"-->
+    <!--                    android:layout_height="74dp"-->
+    <!--                    android:layout_marginTop="24dp"-->
+    <!--                    android:text="You can also use this space to type how much you think you spend each month."-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="20dp"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView20"-->
+    <!--                    android:layout_width="266dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginTop="24dp"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:text="You might end up suprised!"-->
+    <!--                    android:textSize="20dp"-->
+    <!--                    app:layout_constraintEnd_toEndOf="@+id/textView19"-->
+    <!--                    app:layout_constraintStart_toStartOf="@+id/textView19"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/textView19" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/name"-->
+    <!--                    android:layout_width="262dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    android:layout_marginTop="64dp"-->
+    <!--                    android:background="@color/white"-->
+    <!--                    android:ellipsize="start"-->
+    <!--                    android:hint="Name"-->
+    <!--                    android:paddingLeft="5dp"-->
+    <!--                    android:paddingTop="10dp"-->
+    <!--                    android:paddingBottom="5dp"-->
+    <!--                    android:textColorHint="#132d94"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    app:layout_constraintEnd_toEndOf="@+id/textView20"-->
+    <!--                    app:layout_constraintStart_toStartOf="@+id/textView20"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/textView20" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/target"-->
+    <!--                    android:layout_width="262dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    android:layout_marginTop="60dp"-->
+    <!--                    android:background="@color/white"-->
+    <!--                    android:ellipsize="start"-->
+    <!--                    android:hint="Target"-->
+    <!--                    android:paddingLeft="5dp"-->
+    <!--                    android:paddingTop="10dp"-->
+    <!--                    android:paddingBottom="5dp"-->
+    <!--                    android:textColorHint="#132d94"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    app:layout_constraintEnd_toEndOf="@+id/name"-->
+    <!--                    app:layout_constraintStart_toStartOf="@+id/name"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/name"-->
+    <!--                    android:inputType="numberDecimal"/>-->
+
+    <!--                <android.widget.Button-->
+    <!--                    android:id="@+id/save"-->
+    <!--                    android:layout_width="143dp"-->
+    <!--                    android:layout_height="56dp"-->
+    <!--                    android:layout_marginTop="60dp"-->
+    <!--                    android:background="@drawable/button_background"-->
+    <!--                    android:text="SAVE"-->
+    <!--                    android:textSize="25dp"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    app:layout_constraintEnd_toEndOf="@+id/target"-->
+    <!--                    app:layout_constraintHorizontal_bias="0.504"-->
+    <!--                    app:layout_constraintStart_toStartOf="@+id/target"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/target"-->
+    <!--                    android:onClick="@{presenter::handleAddBudget}"/>-->
+
+    <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--        <android.widget.Button-->
+    <!--            android:id="@+id/button5"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="32dp"-->
+    <!--            android:layout_marginTop="36dp"-->
+    <!--            android:text="BACK"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+</layout>

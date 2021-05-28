@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.TransactionsAnalysisGraph.TransactionsAnalysisGraph">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#012C29"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/bar_chart_expenses_analysis_left_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Weekly Spending Frequency"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/bar_chart_expenses_analysis_left"
+                    app:layout_constraintEnd_toEndOf="@+id/bar_chart_expenses_analysis_left"
+                    app:layout_constraintStart_toStartOf="@+id/bar_chart_expenses_analysis_left">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/bar_chart_expenses_analysis_left_label2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Weekly Spending Cost"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/bar_chart_expenses_analysis_right"
+                    app:layout_constraintEnd_toEndOf="@+id/bar_chart_expenses_analysis_right"
+                    app:layout_constraintStart_toStartOf="@+id/bar_chart_expenses_analysis_right">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/bar_chart_expenses_analysis_label_problem_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="146dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="153dp"
+                    android:text="Weekly Analysis"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bar_chart_expenses_analysis_left"
+                    app:layout_constraintVertical_bias="0.0">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/bar_chart_expenses_analysis_label_problem_day2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Problem day: "
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/bar_chart_expenses_analysis_label_problem_day_dynamic"
+                    app:layout_constraintStart_toStartOf="@+id/bar_chart_expenses_analysis_label_problem_day"
+                    app:layout_constraintTop_toBottomOf="@+id/bar_chart_expenses_analysis_label_problem_day">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/bar_chart_expenses_analysis_label_problem_day_dynamic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N/A"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/bar_chart_expenses_analysis_label_problem_day"
+                    app:layout_constraintStart_toEndOf="@+id/bar_chart_expenses_analysis_label_problem_day2"
+                    app:layout_constraintTop_toTopOf="@+id/bar_chart_expenses_analysis_label_problem_day2">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/bar_chart_expenses_analysis_label_problem_day3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Description: highest spending frequency and cost"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/bar_chart_expenses_analysis_label_problem_day"
+                    app:layout_constraintStart_toStartOf="@+id/bar_chart_expenses_analysis_label_problem_day"
+                    app:layout_constraintTop_toBottomOf="@+id/bar_chart_expenses_analysis_label_problem_day2">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/budget_period_to_dynamic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="XX/XX/XXXX"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView5"
+                    app:layout_constraintTop_toTopOf="@+id/textView5">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/textView"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/budget_period_from_dynamic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="XX/XX/XXXX"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/textView5"
+                    app:layout_constraintTop_toTopOf="@+id/textView5">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Transactions Analysis"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:visibility="invisible"
+                    android:background="@drawable/settings_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.979"
+                    app:layout_constraintStart_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/bar_chart_expenses_analysis_left"
+                    android:layout_width="190dp"
+                    android:layout_height="200dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/bar_chart_expenses_analysis_right"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.55" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/bar_chart_expenses_analysis_right"
+                    android:layout_width="190dp"
+                    android:layout_height="200dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/bar_chart_expenses_analysis_left"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.55" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="bar_chart_expenses_analysis_label_problem_day2,bar_chart_expenses_analysis_label_problem_day_dynamic" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</FrameLayout>
+

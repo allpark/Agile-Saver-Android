@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.category.CategoryIconsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:columnCount="4"
+            app:rowCount="500">
+
+
+            <ImageView
+                android:id="@+id/car"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/car" />
+            <ImageView
+                android:id="@+id/shopping"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/shopping" />
+            <ImageView
+                android:id="@+id/clothes"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/clothes" />
+            <ImageView
+                android:id="@+id/food"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/groceries"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/groceries" />
+            <ImageView
+                android:id="@+id/house"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/house" />
+            <ImageView
+                android:id="@+id/expense"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/expense" />
+            <ImageView
+                android:id="@+id/income"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/income" />
+            <ImageView
+                android:id="@+id/music"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/music" />
+            <ImageView
+                android:id="@+id/tech"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/tech" />
+            <ImageView
+                android:id="@+id/transport"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/transport" />
+            <ImageView
+                android:id="@+id/live_streaming"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/live_streaming" />
+            <ImageView
+                android:id="@+id/life_and_entertainment"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/life_and_entertainment" />
+        </androidx.gridlayout.widget.GridLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

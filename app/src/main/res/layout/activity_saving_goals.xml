@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.agilesavev2.views.saving_goals.SavingGoalsPresenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.saving_goals.SavingGoalsActivity"
+        android:background="@color/agileSaverPink">
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/draw_layout"
+            android:fitsSystemWindows="true"
+            tools:context=".views.home.HomeActivity"
+            tools:openDrawer="start">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/linearLayout">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:elevation="4dp"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+                    <TextView
+                        android:textColor="#fff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:text="SAVING GOALS" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="1dp"
+                    android:paddingVertical="1dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/agileSaverGray"
+                        android:orientation="vertical"/>
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:text="Available to save every month:"-->
+<!--                        android:textAppearance="?android:attr/textAppearanceMedium"-->
+<!--                        android:textColor="#fff" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:text="£534.00"-->
+<!--                        android:textColor="#fff"-->
+<!--                        android:textSize="60dp"-->
+<!--                        android:textStyle="bold" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+                        <!--                            contains the buttons to active and reached-->
+                        <LinearLayout
+                            android:id="@+id/saving_goals_reached_active_clickable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Active"
+                                android:textColor="#fff"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/saving_goal_active_underline"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_margin="5dp"
+                                android:background="@color/white"
+                                android:orientation="horizontal"></LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/saving_goals_reached_reached_clickable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Reached"
+                                android:textColor="#fff"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/saving_goal_reached_underline"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_margin="5dp"
+                                android:background="@color/white"
+                                android:orientation="horizontal">
+                                <!--                                    NO COLOUR FOR NOW-->
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+<!--                fragment layout container for savings goals "boxes"-->
+
+                <LinearLayout
+                    android:id="@+id/fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+            </ScrollView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton"
+                    app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+                    app:layout_constraintTop_toTopOf="@+id/floatingActionButton">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:text="ADD SAVING GOAL"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"/>
+                    />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/right_arrow"
+                        android:layout_marginRight="10dp"
+                        android:tint="@color/white"/>
+                </LinearLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:backgroundTint="#6D0475"
+                    android:clickable="true"
+
+                    android:onClick="@{presenter::handleAddSavingsGoal}"
+                    app:borderWidth="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/plus" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.navigation.NavigationView
+                android:layout_width="wrap_content"
+                android:background="#111180"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:id="@+id/nav_view"
+                app:headerLayout="@layout/nav_header"
+                app:itemTextColor="@color/white"
+                app:itemIconTint="@color/white"
+                app:menu="@menu/draw_menu"/>
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

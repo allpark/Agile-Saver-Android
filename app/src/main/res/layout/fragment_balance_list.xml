@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.accounts.BalanceListFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/agileSaverPurpleBlue">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:text="List of accounts"
+                android:textColor="@color/white"/>
+            <ImageView
+                android:id="@+id/settings"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/cog"
+                android:tint="@color/white"
+
+            />
+
+        </LinearLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/flex_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal"
+            app:flexWrap="wrap">
+<!--            <fragment-->
+<!--                android:id="@+id/account1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                app:layout_minWidth="120dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:name="com.example.agilesavev2.fragments.accounts.account.AccountFragment"/>-->
+<!--            <fragment-->
+<!--                android:id="@+id/account2"-->
+<!--                app:layout_minWidth="120dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:name="com.example.agilesavev2.fragments.accounts.account.AccountFragment"/>-->
+
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <android.widget.Button
+                    android:id="@+id/adjust_balance"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_background"
+                    android:textColor="@color/white"
+                    android:text="ADJUST BALANCE"
+                    />
+
+            </LinearLayout>
+
+
+            <android.widget.Button
+                android:id="@+id/add_account"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white"
+                android:text="ADD ACCOUNT"
+
+
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="329dp"
+            android:text="List of accounts"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.177"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat"
+            android:layout_width="186dp"
+            android:layout_height="42dp"
+            android:background="#909992"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="3dp"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cash"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="£10" />" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat2"
+            android:layout_width="180dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="#909992"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Account"
+                android:textStyle="bold" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="116dp"
+            android:layout_height="29dp"
+            android:onClick="@{presenter::handleAdjustBalance}"
+            android:text="ADJUST BALANCE"
+            android:textSize="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayoutCompat"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>

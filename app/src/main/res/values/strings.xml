@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">Agile Saver</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_my_budget">MyBudgetActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="subscriptions_category">
+        <item>Please select a category</item>
+        <item>TV/Streaming</item>
+        <item>Transport</item>
+        <item>Gaming</item>
+        <item>Software</item>
+        <item>Pharmacy</item>
+        <item>Eating out</item>
+        <item>Sports</item>
+        <item>Social media</item>
+        <item>Essentials</item>
+        <item>Digital</item>
+        <item>Charity</item>
+        <item>Entertainment</item>
+        <item>Bills</item>
+        <item>Personal care</item>
+        <item>Shopping</item>
+        <item>Holidays</item>
+        <item>Finances</item>
+    </string-array>
+
+
+    <string-array name="currency">
+        <item>Select currency</item>
+        <item>AUD - Australian Dollar</item>
+        <item>BGN - Bulgarian Lev</item>
+        <item>BRL - Brazilian Real</item>
+        <item>CAD - Canadian Dollar</item>
+        <item>CHF - Swiss Franc</item>
+        <item>CNY - Chinese Yuan</item>
+        <item>CZK - Czech Koruna</item>
+        <item>DKK - Danish Krone</item>
+        <item>EUR - Euro</item>
+        <item>GBP - British Pound</item>
+        <item>HKD - Hong Kong Dollar</item>
+        <item>HRK - Croatian Kuna</item>
+        <item>HUF - Hungarian Forint</item>
+        <item>IDR - Indonesian Rupiah</item>
+        <item>ILS - Israeli New Shekel</item>
+        <item>INR - Indian Rupee</item>
+        <item>ISK - Icelandic Króna</item>
+        <item>JPY - Japanese Yen</item>
+        <item>KRW - South Korean Won</item>
+        <item>MXN - Mexican Peso</item>
+        <item>MYR - Malaysian Ringgit</item>
+        <item>NOK - Norwegian Krone</item>
+        <item>NZD - New Zealand Dollar</item>
+        <item>PHP - Philippine Piso</item>
+        <item>PLN - Polish Zloty</item>
+        <item>RON - Romanian Leu</item>
+        <item>RUB - Russian Rouble</item>
+        <item>SEK - Swedish Krona</item>
+        <item>SGD - Singapore Dollar</item>
+        <item>THB - Thai Baht</item>
+        <item>TRY - Turkish Lira</item>
+        <item>USD - US Dollar</item>
+        <item>ZAR - South African Rand</item>
+    </string-array>
+
+    <string-array name="pay_day">
+        <item>How often is payday?</item>
+        <item>weekly</item>
+        <item>biweekly</item>
+        <item>monthly</item>
+        <item>bimonthly</item>
+    </string-array>
+
+    <string-array name="transaction_type">
+        <item>EXPENSE</item>
+        <item>INCOME</item>
+    </string-array>
+
+
+    <!--Account type-->
+    <string-array name="type">
+        <item>General</item>
+        <item>Cash</item>
+        <item>Current account</item>
+        <item>Credit card</item>
+        <item>Saving account</item>
+        <item>Bonus</item>
+        <item>Insurance</item>
+        <item>Investment</item>
+        <item>Loan</item>
+        <item>Mortgage</item>
+        <item>Account with overdraft</item>
+        <item>Student loan</item>
+    </string-array>
+
+
+</resources>
+
+
+

@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.agilesavev2.views.calculator.CalculatorPresenter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@drawable/gradient_background2">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="34dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:tint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cancel"
+            android:onClick="@{presenter::handleCancel}"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="38dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:tint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/checked"
+            android:onClick="@{presenter::handleSave}"/>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.widget.Button
+                android:id="@+id/incomeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background2_selected"
+                android:text="INCOME"
+                android:textColor="@color/white"
+                android:onClick="@{presenter::handleIncomeMode}"/>/>
+
+            <android.widget.Button
+                android:id="@+id/expenseBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background2"
+                android:text="EXPENSE"
+                android:textColor="@color/white"
+                android:onClick="@{presenter::handleExpenseMode}"/>/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="378dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/textbox_background"
+            android:hint="name"
+            android:inputType="text"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="375dp"
+            android:layout_height="132dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout5"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+            <TextView
+                android:id="@+id/mode"
+                android:layout_width="66dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="24dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="60dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:gravity="right"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="60dp" />
+
+            <TextView
+                android:id="@+id/currency_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="32dp"
+                android:text="GBP"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="373dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:onClick="@{presenter::handleAccounts}">
+
+                <TextView
+                    android:id="@+id/account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ACCOUNT"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/selectedAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Select account"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:onClick="@{presenter::handleCategory}">
+
+                <TextView
+                    android:id="@+id/Category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="CATEGORY"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/selectedCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="select category"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="375dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:columnCount="3"
+                app:rowCount="4"
+                android:layout_weight="1"
+                >
+
+                <android.widget.Button
+                    android:id="@+id/button17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="7"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1" />
+
+                <android.widget.Button
+                    android:id="@+id/button18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="8"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0"
+                    app:layout_rowWeight="1" />
+
+                <android.widget.Button
+                    android:id="@+id/button19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="9"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    app:layout_column="2"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0"
+                    app:layout_rowWeight="1" />
+
+                <android.widget.Button
+                    android:id="@+id/button21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="4"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1" />
+
+                <android.widget.Button
+                    android:id="@+id/button22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="5"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1" />
+
+                <android.widget.Button
+                    android:id="@+id/button23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="6"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1" />
+
+                <android.widget.Button
+                    android:id="@+id/button25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1" />
+
+                <android.widget.Button
+                    android:id="@+id/button26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1" />
+
+                <android.widget.Button
+                    android:id="@+id/button27"
+                    android:background="@drawable/button_background2"
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="3"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:textColor="@color/white"/>
+
+                <android.widget.Button
+                    android:id="@+id/button29"
+                    android:background="@drawable/button_background2"
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{presenter::handleDecimal}"
+                    android:text="."
+                    android:textFontWeight="1000"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:textColor="@color/white"/>
+
+                <android.widget.Button
+                    android:id="@+id/button30"
+                    android:background="@drawable/button_background2"
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{presenter::handleNumbers}"
+                    android:text="0"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:textColor="@color/white"/>
+
+                <android.widget.Button
+                    android:id="@+id/button31"
+                    android:background="@drawable/button_background2"
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{presenter::handleDelete}"
+                    android:text="del"
+                    android:textSize="30dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:textColor="@color/white"/>
+
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <android.widget.Button
+                    android:id="@+id/button20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleOperations}"
+                    android:text="/"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp" />
+
+                <android.widget.Button
+                    android:id="@+id/button24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleOperations}"
+                    android:text="X"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp" />
+
+                <android.widget.Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleOperations}"
+                    android:text="-"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp" />
+
+                <android.widget.Button
+                    android:id="@+id/button28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleOperations}"
+                    android:text="+"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp" />
+
+                <android.widget.Button
+                    android:id="@+id/button32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background2"
+                    android:onClick="@{presenter::handleSubmit}"
+                    android:text="="
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp" />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="378dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/editText"
+            app:layout_constraintStart_toStartOf="@+id/editText"
+            app:layout_constraintTop_toBottomOf="@+id/editText">
+            <android.widget.Button
+                android:id="@+id/date_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="datetime"
+                android:layout_weight="1"
+                android:paddingHorizontal="10dp"
+                android:layout_marginRight="5dp"
+                style="?android:spinnerStyle"
+                android:background="@drawable/textbox_background" />
+            <android.widget.Button
+                android:id="@+id/time_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="datetime"
+                android:layout_weight="1"
+                android:paddingHorizontal="10dp"
+                android:hint="Time"
+                android:layout_marginLeft="5dp"
+                style="?android:spinnerStyle"
+                android:onClick="@{presenter::handleTimePicker}"
+                android:background="@drawable/textbox_background"/>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--tools:context=".views.calculator.CalculatorMainActivity">-->
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    android:id="@+id/constraintLayout"-->
+<!--    android:layout_width="408dp"-->
+<!--    android:layout_height="245dp"-->
+<!--    android:layout_marginTop="12dp"-->
+<!--    android:layout_marginBottom="2dp"-->
+<!--    app:layout_constraintBottom_toTopOf="@+id/linearLayout2"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintHorizontal_bias="1.0"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/gridLayout">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/mode"-->
+<!--        android:layout_width="66dp"-->
+<!--        android:layout_height="77dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:gravity="right"-->
+<!--        android:text="+"-->
+<!--        android:textSize="60dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textView10"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textView10"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textView10" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="68dp"-->
+<!--        android:layout_marginEnd="72dp"-->
+<!--        android:text="Category"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView10"-->
+<!--        android:onClick="@{presenter::handleCategory}"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/selectedAccount"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="CASH"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/textView4"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textView4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView4" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView10"-->
+<!--        android:layout_width="173dp"-->
+<!--        android:layout_height="75dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:autoSizeMaxTextSize="60dp"-->
+<!--        android:autoSizeMinTextSize="0.5dp"-->
+<!--        android:autoSizeTextType="uniform"-->
+<!--        android:gravity="right"-->
+<!--        android:text="0"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.516"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.245"-->
+<!--        android:inputType="numberDecimal"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="72dp"-->
+<!--        android:layout_marginTop="68dp"-->
+<!--        android:text="Account"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView10" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView11"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:text="GDP"-->
+<!--        android:textSize="30dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textView10"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView10"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textView10" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="null"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/textView5"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textView5"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView5" />-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--<android.widget.Button-->
+<!--    android:id="@+id/button4"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="54dp"-->
+<!--    android:layout_marginTop="2dp"-->
+<!--    android:layout_marginEnd="8dp"-->
+<!--    android:text="SUBMIT"-->
+<!--    app:layout_columnWeight="1"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    android:onClick="@{presenter::handleSave}"/>-->
+
+<!--<androidx.gridlayout.widget.GridLayout-->
+<!--    android:id="@+id/gridLayout"-->
+<!--    android:layout_width="413dp"-->
+<!--    android:layout_height="59dp"-->
+<!--    android:layout_marginTop="56dp"-->
+<!--    app:columnCount="3"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    app:rowCount="1">-->
+
+<!--    <android.widget.Button-->
+<!--        android:id="@+id/expense"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:text="EXPENSE"-->
+<!--        app:layout_column="1"-->
+<!--        app:layout_columnWeight="1"-->
+<!--        app:layout_row="0"-->
+<!--        android:onClick="@{presenter::handleExpenseMode}"/>-->
+
+<!--    <android.widget.Button-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:text="TRANSFER"-->
+<!--        app:layout_column="2"-->
+<!--        app:layout_columnWeight="1"-->
+<!--        app:layout_row="0" />-->
+
+<!--    <android.widget.Button-->
+<!--        android:id="@+id/income"-->
+<!--        android:layout_width="107dp"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:text="INCOME"-->
+<!--        app:layout_column="0"-->
+<!--        app:layout_columnWeight="1"-->
+<!--        app:layout_row="0"-->
+<!--        android:onClick="@{presenter::handleIncomeMode}"/>-->
+<!--</androidx.gridlayout.widget.GridLayout>-->
+
+<!--<ImageButton-->
+<!--    android:id="@+id/imageButton2"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="8dp"-->
+<!--    android:layout_marginTop="1dp"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"-->
+<!--    android:onClick="@{presenter::handleCancel}"/>-->
+
+<!--<LinearLayout-->
+<!--    android:id="@+id/linearLayout2"-->
+<!--    android:layout_width="429dp"-->
+<!--    android:layout_height="344dp"-->
+<!--    android:layout_marginTop="2dp"-->
+<!--    android:layout_marginBottom="13dp"-->
+<!--    android:orientation="horizontal"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/constraintLayout"-->
+<!--    android:gravity="center_horizontal">-->
+
+<!--    <androidx.gridlayout.widget.GridLayout-->
+<!--        android:id="@+id/gridLayout2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="296dp"-->
+<!--        app:columnCount="3"-->
+<!--        app:rowCount="4">-->
+
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button17"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="7"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button18"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="8"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_column="1"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_row="0"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button19"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="9"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_column="2"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_row="0"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button21"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="4"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button22"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="5"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button23"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="6"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button25"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="1"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button26"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="2"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button27"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="3"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button29"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleDecimal}"-->
+<!--            android:text="."-->
+<!--            android:textFontWeight="1000"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button30"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleNumbers}"-->
+<!--            android:text="0"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button31"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleDelete}"-->
+<!--            android:text="del"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--    </androidx.gridlayout.widget.GridLayout>-->
+
+<!--    <androidx.gridlayout.widget.GridLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:columnCount="1"-->
+<!--        app:rowCount="5">-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button20"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleOperations}"-->
+<!--            android:text="/"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button24"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleOperations}"-->
+<!--            android:text="X"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleOperations}"-->
+<!--            android:text="-"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button28"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleOperations}"-->
+<!--            android:text="+"-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/button32"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{presenter::handleSubmit}"-->
+<!--            android:text="="-->
+<!--            android:textSize="30dp"-->
+<!--            app:layout_columnWeight="1"-->
+<!--            app:layout_rowWeight="1" />-->
+<!--    </androidx.gridlayout.widget.GridLayout>-->
+<!--</LinearLayout>-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

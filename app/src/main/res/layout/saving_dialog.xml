@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/agileSaverLightPink"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginVertical="20dp">>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/saving_dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingVertical="5dp"
+                android:text="SavingName"
+                android:textColor="@color/agileSaverPurpleBlue"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/saving_dialog_goal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:paddingVertical="2dp"
+                android:text="Saving goal target: £30"
+                android:textColor="@color/agileSaverPurpleBlue"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <EditText
+                android:id="@+id/saving_dialog_goal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="saving goal"
+                android:inputType="numberDecimal"
+                android:background="@drawable/textbox_background"
+                android:imeOptions="actionDone"
+             />
+
+            <TextView
+                android:id="@+id/saving_dialog_saved_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:paddingVertical="2dp"
+                android:text="Saved So Far: £10"
+                android:textColor="@color/agileSaverPurpleBlue"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <EditText
+                android:id="@+id/saving_dialog_saved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="saving goal"
+                android:background="@drawable/textbox_background"
+                android:inputType="numberDecimal"
+                android:imeOptions="actionDone"
+
+                />
+
+            <TextView
+                android:id="@+id/saving_dialog_target_date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:paddingVertical="2dp"
+                android:text="Goal Target Date"
+                android:textColor="@color/agileSaverPurpleBlue"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+
+            <android.widget.Button
+                android:id="@+id/saving_dialog_goal_date"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/agileSaverLightPink"
+                android:hint=""
+                android:text=""
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right">
+                <TextView
+                    android:id="@+id/saving_dialog_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF0000"
+                    android:layout_marginRight="10dp"
+                    android:text="delete"/>
+                <TextView
+                    android:id="@+id/saving_dialog_update"
+                    android:textColor="@color/agileSaverPurpleBlue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="edit"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

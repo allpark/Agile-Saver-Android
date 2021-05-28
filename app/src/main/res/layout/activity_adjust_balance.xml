@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.agilesavev2.views.home.home_assets.AdjustBalancePresenter" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.home.home_assets.AdjustBalanceActivity"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adjust Balance"
+            tools:layout_editor_absoluteX="53dp" />
+
+        <EditText
+            android:id="@+id/adjustBalance_input"
+            android:layout_width="305dp"
+            android:layout_height="43dp"
+            android:ems="10"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="39dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:paddingHorizontal="60dp">
+        <Button
+            android:id="@+id/adjustBalance_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="102dp"
+            android:layout_marginHorizontal="10dp"/>
+
+        <Button
+            android:id="@+id/adjustBalance_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:onClick="@{presenter::handleOnSubmit}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/adjustBalance_cancel"
+            tools:layout_editor_absoluteX="161dp" />
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

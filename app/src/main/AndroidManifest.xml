@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.agilesavev2">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AgileSaveV2">
+        <activity android:name=".views.settings.user_feedback.UserFeedBackActivity"></activity>
+        <activity
+            android:name=".views.subscriptions.subscription_analysis.SubscriptionAnalysisActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.settings.SettingsPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.category.CategoryIconsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.splash_screens.LoadingScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.settings.pay_info_setting.PayInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.subscriptions.add_subscription.AddSubscriptionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.settings.add_category.AddCategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.current_balance.categories.CurrentBalanceCategoriesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.settings.manage_accounts.selected_account.ManageSelectedAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.settings.manage_user_account.ManageUserAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.settings.manage_accounts.ManageAccountsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.calculator.assets.AccountListViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.accounts.manually_input.ManualInputAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.accounts.import_csv.ImportCSVActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.accounts.sync_bank_account.SyncBankAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.accounts.AccountTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.my_budget.addBudget.InsertNewbudgetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.addBudget.AddBudgetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.category.subCategory.SubCategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.category.CategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.calculator.CalculatorMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.home.home_assets.AdjustBalanceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AgileSaveV2.CustomTheme" />
+        <activity
+            android:name=".views.complete_signup.CompleteSignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.splash_screens.welcome.WelcomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.splash_screens.welcomeback.WelcomeBackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.current_balance.CurrentBalanceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AgileSaveV2.NoActionBar" />
+        <activity
+            android:name=".views.ai_analysis.AIAnalysisActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AgileSaveV2.NoActionBar" />
+        <activity
+            android:name=".views.saving_goals.SavingGoalsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AgileSaveV2.NoActionBar" />
+        <activity
+            android:name=".views.saving_goals.addSavingGoal.AddSavingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AgileSaveV2.NoActionBar" />
+        <activity
+            android:name=".views.subscriptions.SubscriptionsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AgileSaveV2.NoActionBar" />
+        <activity
+            android:name=".views.my_budget.MyBudgetActivity"
+            android:label="@string/title_activity_my_budget"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AgileSaveV2.NoActionBar" />
+        <activity
+            android:name=".views.home.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".views.forgotPassword.ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.register.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.splash_screens.OpenAppActivityMainActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

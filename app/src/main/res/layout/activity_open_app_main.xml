@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.splash_screens.OpenAppActivityMainActivity"
+    android:background="@color/black">
+
+
+    <ImageView
+        android:id="@+id/open_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="106dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/open_logo"
+        app:layout_constraintStart_toStartOf="@+id/open_logo"
+        app:layout_constraintTop_toBottomOf="@+id/open_logo">
+
+        <TextView
+            android:id="@+id/open_agile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AGILE"
+            android:textColor="#ff0000"
+            android:textSize="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/open_saver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="SAVER"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

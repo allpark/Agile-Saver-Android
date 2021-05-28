@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.agilesavev2.views.current_balance.CurrentBalancePresenter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.current_balance.CurrentBalanceActivity"
+        android:background="#001E80">
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/draw_layout"
+            android:fitsSystemWindows="true"
+            tools:context=".views.home.HomeActivity"
+            tools:openDrawer="start">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/linearLayout">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="#006200EE"
+                        android:id="@+id/toolBar"
+                        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                        android:elevation="4dp">
+                        <TextView
+                            android:textColor="#fff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:text="Balance" />
+                    </androidx.appcompat.widget.Toolbar>
+                    <LinearLayout
+                        android:id="@+id/fragment_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@color/agileSaverGray"
+                            android:orientation="vertical"/>
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:id="@+id/piechart_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/transaction_type"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Spent:"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"/>
+
+                                <TextView
+                                    android:id="@+id/transaction_value"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textSize="25dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/white"/>
+
+                            </LinearLayout>
+
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Remaining Total Balance:"
+                            android:textSize="16dp"
+                            android:layout_gravity="center"
+                            android:textColor="#CDCDCD" />
+                        <TextView
+                            android:id="@+id/balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="£0"
+                            android:layout_marginBottom="15dp"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"/>
+
+                        <android.widget.Button
+                            android:layout_width="139dp"
+                            android:layout_height="44dp"
+                            android:background="@drawable/button_background_filled"
+                            android:text="Categories"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            android:onClick="@{presenter::handleCategories}"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_marginTop="70dp"
+                            >
+                            <LinearLayout
+                                android:id="@+id/daysTillPay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:id="@+id/days"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="16"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:layout_marginLeft="10dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Days Till Payday"
+                                    android:textSize="20dp"
+                                    android:textColor="#CDCDCD"
+                                    android:layout_marginLeft="10dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginHorizontal="5dp"
+                                android:background="@color/agileSaverGray"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="right"
+                                    android:layout_marginHorizontal="10dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Type: "
+                                        android:textSize="20dp"
+                                        android:textColor="#CDCDCD"/>
+                                    <Spinner
+                                        android:id="@+id/selectedType"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="20dp"
+                                        android:backgroundTint="@color/white"
+                                        android:popupBackground="@color/agileSaverGray"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="right"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:onClick="@{presenter::handleAccountSelection}">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Account: "
+                                        android:textSize="20dp"
+                                        android:textColor="#CDCDCD"/>
+                                    <TextView
+                                        android:id="@+id/selectedAccount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Account"
+                                        android:textSize="20dp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginHorizontal="5dp"
+                                android:background="@color/agileSaverGray"/>
+                            <LinearLayout
+                                android:id="@+id/transactions_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <!-- 16 -->
+                    <!-- 20 -->
+                    <!-- 26 -->
+                    <!-- 30 -->
+                    <!-- 40 -->
+
+                </LinearLayout>
+
+
+
+
+            </ScrollView>
+
+            <com.google.android.material.navigation.NavigationView
+                android:layout_width="wrap_content"
+                android:background="#111180"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:id="@+id/nav_view"
+                app:headerLayout="@layout/nav_header"
+                app:itemTextColor="@color/white"
+                app:itemIconTint="@color/white"
+                app:menu="@menu/draw_menu"/>
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

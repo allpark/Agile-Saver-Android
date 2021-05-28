@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.agilesavev2.views.login.LoginPresenter" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background"
+        android:gravity="center"
+        tools:context=".views.login.LoginActivity">
+
+
+
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="350dp"
+            android:inputType="textNoSuggestions"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_layout_background"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/logo2"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="LOG IN BELOW"
+                android:textColor="@color/white"
+                android:textSize="22dp" />
+
+            <EditText
+                android:id="@+id/login_username"
+                android:layout_width="294dp"
+                android:maxLines="1"
+                android:inputType="textNoSuggestions"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/textbox_background"
+                android:hint="Username/Email"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/hintColour"
+                android:textStyle="bold" />
+
+            />
+
+
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="294dp"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/textbox_background"
+                android:hint="Password"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/hintColour"
+                android:textStyle="bold"
+                android:inputType="textPassword"/>
+
+            />
+
+            <CheckBox
+                android:id="@+id/remember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:text="remember me"
+                android:textColor="@color/white"
+                android:layout_gravity="center" 
+                android:onClick="@{presenter::handleRememberChecked}"/>
+
+            <android.widget.Button
+                android:id="@+id/loginButton"
+                android:layout_width="170dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Login"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="23sp"
+                android:layout_marginTop="50dp"
+                android:shadowColor="#8614A8"
+                android:shadowRadius="0"
+                android:onClick="@{presenter::handleSubmit}"
+                android:background="@drawable/button_background"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingTop="8dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:text="Forgot Password?"
+                    android:onClick="@{presenter::handleForgotPassword}" />
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@color/agileSaverGray"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="0dp"
+                    android:textSize="18dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:text="Don't have an account?"
+                    android:onClick="@{presenter::handleRegister}"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+</layout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    OLD       -->
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools">-->
+<!--<data>-->
+<!--    <variable-->
+<!--        name="presenter"-->
+<!--        type="com.example.agilesavev2.views.login.LoginPresenter" />-->
+<!--</data>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context="login.LoginActivity">-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="83dp"-->
+<!--        android:layout_marginEnd="310dp"-->
+<!--        android:layout_marginBottom="600dp"-->
+<!--        android:text="Back"-->
+<!--        android:onClick="@{presenter::handleBack}"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="179dp"-->
+<!--        android:layout_marginTop="141dp"-->
+<!--        android:layout_marginEnd="174dp"-->
+<!--        android:layout_marginBottom="571dp"-->
+<!--        android:text="LOG IN BELOW"-->
+<!--        android:textSize="30dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.517"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.476" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextPassword"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Password"-->
+<!--        android:inputType="textPassword"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:onClick="@{presenter::handleSubmit}"-->
+<!--        android:text="Submit"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"-->
+<!--        app:layout_constraintHorizontal_bias="0.512"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:onClick="@{presenter::handleForgotPassword}"-->
+<!--        android:text="Forgot Password?"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/button4"-->
+<!--        app:layout_constraintHorizontal_bias="0.52"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/button4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button4" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:onClick="@{presenter::handleRegister}"-->
+<!--        android:text="Don't have an account?"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/textView2"-->
+<!--        app:layout_constraintHorizontal_bias="0.607"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textView2"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextPersonName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="68dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Name"-->
+<!--        android:inputType="textPersonName"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/textView"-->
+<!--        app:layout_constraintHorizontal_bias="0.545"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textView"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</layout>-->

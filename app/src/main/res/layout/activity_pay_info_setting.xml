@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.agilesavev2.views.settings.pay_info_setting.PayInfoPresenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background2"
+        tools:context=".views.complete_signup.CompleteSignUpActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="SET PAY INFO"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#fff"
+                android:textStyle="bold"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="41dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:tint="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="@{presenter::handleBack}"
+                app:srcCompat="@drawable/gobackbutton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:elevation="3dp"
+            android:src="@drawable/logo"
+            android:translationY="-70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <FrameLayout
+            android:layout_width="350dp"
+            android:layout_height="500dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/frame_layout_background">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginTop="124dp"
+                    android:layout_marginEnd="88dp"
+                    android:text="Do you have income? If so"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView17"
+                    app:layout_constraintStart_toStartOf="@+id/textView17"
+                    app:layout_constraintTop_toBottomOf="@+id/textView17">
+
+                    <Spinner
+                        android:id="@+id/paydayType"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/textbox_background"
+                        android:ems="10"
+                        android:entries="@array/pay_day"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center"
+                        android:textSize="20dp" />
+
+                    <android.widget.Button
+                        android:id="@+id/paydayDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/textbox_background"
+                        android:hint="Next pay day"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center"
+                        android:textFontWeight="380"
+                        android:textSize="20dp"
+                        android:visibility="invisible" />
+
+                    <EditText
+                        android:id="@+id/pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/textbox_background"
+                        android:hint="Hourly Salary"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:visibility="invisible" />
+
+
+                </LinearLayout>
+
+                <android.widget.Button
+                    android:id="@+id/button12"
+                    android:layout_width="170dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/button_background"
+                    android:onClick="@{presenter::handleSubmit}"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout6"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+<!--<androidx.cardview.widget.CardView-->
+<!--android:layout_width="364dp"-->
+<!--android:layout_height="629dp"-->
+<!--app:layout_constraintBottom_toBottomOf="parent"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintHorizontal_bias="0.5"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toTopOf="parent"-->
+<!--android:backgroundTint="@color/agileSaverPurpleBlue"-->
+<!--app:cardCornerRadius="30dp">-->
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView16"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="124dp"-->
+<!--        android:text="Welcome!!"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.501"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/firstName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="72dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="First name"-->
+<!--        android:inputType="textPersonName"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/textView16"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textView16"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView16"-->
+<!--        android:background="@color/white"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/surName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="52dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Last name"-->
+<!--        android:inputType="textPersonName"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/textView16"-->
+<!--        app:layout_constraintHorizontal_bias="0.495"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textView16"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/firstName" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/Balance"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="56dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Enter balance"-->
+<!--        android:inputType="number"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/currencyList"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/currencyList"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/currencyList" />-->
+
+<!--    <android.widget.Button-->
+<!--        android:id="@+id/button12"-->
+<!--        android:layout_width="170dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginTop="72dp"-->
+<!--        android:background="@drawable/button_background"-->
+<!--        android:onClick="@{(v) -> presenter.handleSubmit(v)}"-->
+<!--        android:text="Submit"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/Balance"-->
+<!--        app:layout_constraintHorizontal_bias="0.512"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/Balance"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/Balance" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView17"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:text="You're nearly there!"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/textView16"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textView16"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView16"-->
+<!--        android:textColor="@color/white"/>-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/currencyList"-->
+<!--        android:layout_width="208dp"-->
+<!--        android:layout_height="28dp"-->
+<!--        android:layout_marginTop="52dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/surName"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/surName"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/surName"-->
+<!--        android:background="@color/white"/>-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView3"-->
+<!--        android:layout_width="213dp"-->
+<!--        android:layout_height="117dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:layout_marginEnd="25dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.51"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/logo2" />-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</androidx.cardview.widget.CardView>-->

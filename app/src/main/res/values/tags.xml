@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="h1">32dp</string>
+    <string name="h2">24dp</string>
+    <string name="h3">18.72dp</string>
+    <string name="h4">16.00dp</string>
+    <string name="h5">13.28dp</string>
+    <string name="h6">10.72dp</string>
+
+    <string name="p">10.72dp</string>
+</resources>
