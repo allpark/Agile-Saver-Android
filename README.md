@@ -1,9 +1,9 @@
-# Preview 
+# Example text {style=text-align:center}
+
+
 ![](Preview.jpg)
 
-<p align="justify">
-  Lorem ipsum
-</p>
+
 
 ## About
 The concept is a personal budgeting application that uses machine learning/AI to keep
