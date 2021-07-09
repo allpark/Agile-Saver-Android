@@ -1,6 +1,10 @@
 # Preview 
 ![](Preview.jpg)
 
+<p align="justify">
+  Lorem ipsum
+</p>
+
 ## About
 The concept is a personal budgeting application that uses machine learning/AI to keep
 track of expenses, learns spending patterns and recommends deviations to the user’s day
