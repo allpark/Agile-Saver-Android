@@ -1,4 +1,3 @@
-![](/app/src/main/res/drawable/logo.png)
 ![](AgileSaver.png)
 
 The concept is a personal budgeting application that uses machine learning/AI to keep
