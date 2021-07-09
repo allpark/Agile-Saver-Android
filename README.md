@@ -1,4 +1,4 @@
-![](AgileSaver.png)
+![](Preview.jpg)
 
 The concept is a personal budgeting application that uses machine learning/AI to keep
 track of expenses, learns spending patterns and recommends deviations to the user’s day
